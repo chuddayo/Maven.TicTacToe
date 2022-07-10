@@ -11,18 +11,11 @@ public class Board {
     public Board(Character[][] matrix) {
         this.matrix = matrix;
     }
-    public Boolean isInFavorOfX() {
-        return getWinner().equals("X");
-    }
-
-    public Boolean isInFavorOfO() {
-        return getWinner().equals("O");
-    }
-
+    public Boolean isInFavorOfX() { return getWinner().equals("X");}
+    public Boolean isInFavorOfO() {return getWinner().equals("O");}
     public Boolean isTie() {
         return getWinner().equals("");
     }
-
     public String getWinner() {
         List<String> list = new ArrayList<String>();
         list.add(Character.toString(matrix[0][0]) + matrix[0][1] + matrix[0][2]);
@@ -40,5 +33,4 @@ public class Board {
         if (list.contains("OOO")) return "O";
         return "";
     }
-
 }
